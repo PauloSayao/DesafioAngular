@@ -2,11 +2,25 @@
 title="Boas-vindas"
 primaryBtnText="Entrar"
 secondaryBtnText=""
-><form
+>
+<form
 class="login-form"
   [formGroup]="loginForm">
-
+<app-primary-input
+formName="email"
+type="email"
+label=""
+placeholder="Digite seu email"
+>
+  <img class="perfil" src="perfil.png">
+</app-primary-input>
+<app-primary-input
+formName="password"
+type="password"
+label=""
+placeholder="Digite sua senha"
+>
+  <img class="perfil" src="lock.png">
+</app-primary-input>
 </form>
-  <!-- (ngSubmit)="onSubmit()" -->
-
 </app-default-login-layout>

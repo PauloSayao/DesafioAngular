@@ -28,6 +28,7 @@ main{
   gap: 15rem;
   justify-content: space-between;
 
+
   .icon{
     display: flex;
     flex-direction: column;
@@ -39,7 +40,7 @@ main{
   }
   .login{
     text-align: center;
-
+    gap: 5px;
     width: 100%;
   }
   h1{
