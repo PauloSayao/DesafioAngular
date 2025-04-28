@@ -2,11 +2,16 @@
   color: gray;
   font-size: 16px;
   text-align: start;
+  margin-bottom: 5px;
+
+
+
   .input-content{
-    width: 100%;
+    width: 80%;
     border-radius: 8px;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
+
     .icon{
       padding: 7px 7px 7px 10px;
       background-color:#F1F3F6 ;
@@ -21,5 +26,4 @@
 
   }
   }
-
 }

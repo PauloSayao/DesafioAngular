@@ -7,20 +7,26 @@ secondaryBtnText=""
 class="login-form"
   [formGroup]="loginForm">
 <app-primary-input
-formName="email"
+formControlName="email"
+inputName="email"
 type="email"
 label=""
 placeholder="Digite seu email"
 >
-  <img class="perfil" src="perfil.png">
+<img class="perfil" src="perfil.png">
 </app-primary-input>
 <app-primary-input
-formName="password"
-type="password"
+formControlName="password"
+inputName="password"
+[type]= "isPasswordVisible ?   'text' : 'password'"
 label=""
 placeholder="Digite sua senha"
 >
-  <img class="perfil" src="lock.png">
-</app-primary-input>
+<img class="perfil" src="lock.png">
+<button class="button" type="button" (click)="togglePasswordVisibility()">
+  <img class="visible"  [src]="isPasswordVisible ?  'visible.png' :'eye.png' " alt="Toggle Password Visibility">
+</button></app-primary-input>
+
+
 </form>
 </app-default-login-layout>

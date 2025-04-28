@@ -15,11 +15,15 @@ import { PrimaryInputComponent } from '../../components/primary-input/primary-in
 })
 export class LoginComponent {
   loginForm!: FormGroup;
+  isPasswordVisible: boolean = false;
 
   constructor() {
     this.loginForm = new FormGroup({
       email: new FormControl('',[Validators.required,Validators.minLength(5)]),
       password: new FormControl('',[Validators.required,Validators.minLength(6)]),
     });
+  }
+  togglePasswordVisibility(): void {
+    this.isPasswordVisible = !this.isPasswordVisible;
   }
 }
