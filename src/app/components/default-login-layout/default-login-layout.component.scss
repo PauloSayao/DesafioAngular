@@ -51,18 +51,22 @@ main{
     margin-top: 2rem;
     width: 40%;
   }
-  button{
+  .botao{
     width: 300px;
     border-radius: 8px;
     font-size: 16px;
     font-weight: 500;
     border: none;
-    background-color: rgb(2, 173, 173);
+    background-color: rgb(100, 101, 101);
     color: white;
     box-shadow: 0px 0px 10px grey;
     padding: 12px 24px;
-    cursor: pointer;
+    ;
   }
+.botaoativado{
+  background-color: rgb(2, 173, 173);
+  cursor: pointer;
+}
 
 }
 }

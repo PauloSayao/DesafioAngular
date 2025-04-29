@@ -4,6 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -21,10 +22,12 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   loginForm!: FormGroup;
   isPasswordVisible: boolean = false;
+  toastService: any;
 
   constructor(
     private router: Router,
     private loginService: LoginService,
+    private toastr: ToastrService
   ) {
     this.loginForm = new FormGroup({
       email: new FormControl('',[Validators.required,Validators.minLength(5)]),
@@ -34,10 +37,14 @@ export class LoginComponent {
   togglePasswordVisibility(): void {
     this.isPasswordVisible = !this.isPasswordVisible;
   }
-  submit(){
+  submit() {
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
-      next: () => {console.log('Login successful')},
-      error: (error) => {console.log('Login failed', error)}
-
-      })}
-}
+      next: () => {
+        this.toastr.success('Login successful'); // Use ToastrService for success
+        this.router.navigate(['/dashboard']); // Navigate to dashboard on success
+      },
+      error: (err) => {
+        this.toastr.error('Login failed'); // Use ToastrService for error
+      }
+    });
+}}

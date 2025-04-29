@@ -3,6 +3,7 @@ title="Boas-vindas"
 primaryBtnText="Entrar"
 secondaryBtnText=""
 (submit)="submit()"
+[disablePrimaryBtn]="!loginForm.valid"
 >
 <form
 class="login-form"
@@ -24,7 +25,7 @@ label=""
 placeholder="Digite sua senha"
 >
 <img class="perfil" src="lock.png">
-<button class="button" type="button" (click)="togglePasswordVisibility()">
+<button  class="button" type="button" (click)="togglePasswordVisibility()">
   <img class="visible"  [src]="isPasswordVisible ?  'visible.png' :'eye.png' " alt="Toggle Password Visibility">
 </button></app-primary-input>
 <div class="automaticamente"><p>Logar automaticamente</p> </div>
