@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { DefaultLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -30,21 +31,40 @@ export class LoginComponent {
     private toastr: ToastrService
   ) {
     this.loginForm = new FormGroup({
-      email: new FormControl('',[Validators.required,Validators.minLength(5)]),
+      name: new FormControl('',[Validators.required,Validators.minLength(5)]),
       password: new FormControl('',[Validators.required,Validators.minLength(6)]),
     });
   }
+
+
   togglePasswordVisibility(): void {
     this.isPasswordVisible = !this.isPasswordVisible;
   }
+  http = inject(HttpClient)
   submit() {
-    this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
-      next: () => {
-        this.toastr.success('Login successful'); // Use ToastrService for success
-        this.router.navigate(['/dashboard']); // Navigate to dashboard on success
-      },
-      error: (err) => {
-        this.toastr.error('Login failed'); // Use ToastrService for error
+
+    this.http.post('http://localhost:3001/login', this.loginForm.value).subscribe((res:any)=>{
+      localStorage.setItem("angular19User",res.id)
+      this.router.navigate(['/home']);
+    }, error => {
+      if (error.status === 400) {
+        this.toastr.error(error.error.message);
+      } else {
+        this.toastr.error('Usuario ou senha inválidos');
       }
-    });
-}}
+    }
+  );
+}
+}
+
+
+
+// this.loginService.login(this.loginForm.value.name, this.loginForm.value.password).subscribe({
+//   next: () => {
+//     this.toastr.success('Login successful'); // Use ToastrService for success
+//     this.router.navigate(['/home']); // Navigate to dashboard on success
+//   },
+//   error: (err) => {
+//     this.toastr.error('Login failed'); // Use ToastrService for error
+//   }
+// });

@@ -9,8 +9,8 @@ form{
 margin: 0 10%;
 }
 .visible{
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
 
 }
 .button{
@@ -18,9 +18,10 @@ margin: 0 10%;
   margin-left: 35%;
   width: 24px;
   height: 24px;
-  &:disabled{
-    opacity: 0.8;
-  }
+  background: none; /* Remove o fundo padrão */
+  border: none; /* Remove a borda padrão */
+  cursor: pointer; /* Adiciona o cursor de ponteiro */
+  padding: 0;
 }
 .automaticamente{
   margin: 20px 0 20px 0;
