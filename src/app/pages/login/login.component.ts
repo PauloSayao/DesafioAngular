@@ -56,15 +56,3 @@ export class LoginComponent {
   );
 }
 }
-
-
-
-// this.loginService.login(this.loginForm.value.name, this.loginForm.value.password).subscribe({
-//   next: () => {
-//     this.toastr.success('Login successful'); // Use ToastrService for success
-//     this.router.navigate(['/home']); // Navigate to dashboard on success
-//   },
-//   error: (err) => {
-//     this.toastr.error('Login failed'); // Use ToastrService for error
-//   }
-// });

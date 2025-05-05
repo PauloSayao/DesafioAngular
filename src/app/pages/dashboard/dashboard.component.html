@@ -13,12 +13,12 @@
           <p>Veículo</p>
         </div>
         <div class="numero">
-        <select name="cars" id="cars">
+        <select name="cars" id="cars" >
           <option value="" disabled selected></option>
-          <option value="ranger">Ranger</option>
-          <option value="mustang">Mustang</option>
-          <option value="territory">Territory</option>
-          <option value="bronco">Bronco Sport</option>
+          <option value="0">Ranger</option>
+          <option value="1">Mustang</option>
+          <option value="2">Territory</option>
+          <option value="3">Bronco Sport</option>
         </select></div>
       </div>
       <div class="total">
@@ -26,7 +26,7 @@
           <p>Total de Vendas</p>
         </div>
         <div class="numero">
-          <h2>***</h2>
+          <h2>{{ vendas }}</h2>
           <p>Unid.</p>
         </div>
       </div>
@@ -35,7 +35,7 @@
           <p>Conectados</p>
         </div>
         <div class="numero">
-          <h2>***</h2>
+          <h2>{{conectado}}</h2>
           <p>Unid.</p>
         </div>
       </div>
@@ -45,13 +45,13 @@
           <p>Update Software</p>
         </div>
         <div class="numero">
-          <h2>***</h2>
+          <h2>{{software}}</h2>
           <p>Unid.</p>
         </div>
       </div>
     </div>
     <div class="imagem">
-      <img src="" alt="" />
+      <img src="{{ imagem }}" alt="" />
     </div>
     <div class="tabela">
       <table>
@@ -67,12 +67,12 @@
         </thead>
         <tbody>
           <tr>
-            <td><input type="text"></td>
-            <td>2023</td>
-            <td>Preto</td>
-            <td>ABC1D23</td>
-            <td>1234567890</td>
-            <td>Conectado</td>
+            <td><input type="text" (input)="preencher($event)" placeholder="Insira o Código VIN"></td>
+            <td>{{odometro}}</td>
+            <td>{{nivelCombustivel}}</td>
+            <td>{{status}}</td>
+            <td>{{lat}}</td>
+            <td>{{long}}</td>
           </tr>
         </tbody>
       </table>
