@@ -13,69 +13,46 @@
           <p>Veículo</p>
         </div>
         <div class="numero">
-        <select name="cars" id="cars" >
-          <option value="" disabled selected></option>
-          <option value="0">Ranger</option>
-          <option value="1">Mustang</option>
-          <option value="2">Territory</option>
-          <option value="3">Bronco Sport</option>
-        </select></div>
-      </div>
-      <div class="total">
-        <div class="titulo">
-          <p>Total de Vendas</p>
+          <select name="cars" id="cars" [(ngModel)]="carSelect" (change)="carroSelecionado()">
+            <option value="0" disabled selected>Selecione um carro...</option>
+            <option value="0">Ranger</option>
+            <option value="1">Mustang</option>
+            <option value="2">Territory</option>
+            <option value="3">Bronco Sport</option>
+          </select></div>
         </div>
-        <div class="numero">
-          <h2>{{ vendas }}</h2>
-          <p>Unid.</p>
+        <div  class="total">
+          <div class="titulo">
+            <p>Total de Vendas</p>
+          </div>
+          <div class="numero">
+            <h2 *ngIf="carros">{{carros[selecionado].volumetotal}}</h2>
+            <p>Unid.</p>
+          </div>
         </div>
-      </div>
-      <div class="conectados">
-        <div class="titulo">
-          <p>Conectados</p>
+        <div class="conectados">
+          <div class="titulo">
+            <p>Conectados</p>
+          </div>
+          <div class="numero">
+            <h2 *ngIf="carros">{{ carros[selecionado].connected }}</h2>
+            <p>Unid.</p>
+          </div>
         </div>
-        <div class="numero">
-          <h2>{{conectado}}</h2>
-          <p>Unid.</p>
-        </div>
-      </div>
 
-      <div class="update">
-        <div class="titulo">
-          <p>Update Software</p>
-        </div>
-        <div class="numero">
-          <h2>{{software}}</h2>
-          <p>Unid.</p>
+        <div class="update">
+          <div class="titulo">
+            <p>Update Software</p>
+          </div>
+          <div class="numero">
+            <h2 *ngIf="carros">{{ carros[selecionado].softwareUpdates }}</h2>
+            <p>Unid.</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="imagem">
-      <img src="{{ imagem }}" alt="" />
-    </div>
-    <div class="tabela">
-      <table>
-        <thead>
-          <tr class="titulo">
-            <th>Código - Vin</th>
-            <th>Odômetro</th>
-            <th>Nível de Combustivel</th>
-            <th>Status</th>
-            <th>Lat.</th>
-            <th>Long.</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input type="text" (input)="preencher($event)" placeholder="Insira o Código VIN"></td>
-            <td>{{odometro}}</td>
-            <td>{{nivelCombustivel}}</td>
-            <td>{{status}}</td>
-            <td>{{lat}}</td>
-            <td>{{long}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      <div class="imagem">
+        <img *ngIf="carros" [src]="carros[selecionado].img" alt="Imagem do veículo" />
+      </div>
+    <app-tabledashboard></app-tabledashboard>
   </body>
-</html>
+  </html>

@@ -28,6 +28,12 @@ placeholder="Digite sua senha"
 <button  class="button" type="button" (click)="togglePasswordVisibility()">
   <img class="visible"  [src]="isPasswordVisible ?  'visible.png' :'eye.png' " alt="Toggle Password Visibility">
 </button></app-primary-input>
-<div class="automaticamente"><p>Logar automaticamente</p> </div>
+<div class="automaticamente">
+  <p>Logar automaticamente</p>
+  <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+    <label class="form-check-8label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+  </div>
+</div>
 </form>
 </app-default-login-layout>
