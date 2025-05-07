@@ -26,9 +26,7 @@ export class DashboardComponent {
     this.service.getApi().subscribe({
       next : (resposta:any) => {
       this.carros = resposta.vehicles
-      console.log(this.carros)
       this.selecionado=this.carSelect
-      console.log(this.selecionado)
       }
     })
   }

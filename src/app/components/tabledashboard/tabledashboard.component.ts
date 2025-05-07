@@ -22,7 +22,7 @@ export class TabledashboardComponent {
 
   constructor(private http: HttpClient) {
     this.vinSubject.pipe(
-      debounceTime(1000),
+      debounceTime(300),
       filter((timer:string)=>timer.trim().length >19)
     ).subscribe((vin) => {
       this.buscarInformacoes(vin);
