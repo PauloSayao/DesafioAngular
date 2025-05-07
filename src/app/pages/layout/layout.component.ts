@@ -13,7 +13,8 @@ export class LayoutComponent {
 
 onLogout() {
   localStorage.removeItem('angular19User');
-  // window.location.reload();
+  sessionStorage.removeItem('angular19User');
+
   this.router.navigate(['/login']);
 }
 onHome() {

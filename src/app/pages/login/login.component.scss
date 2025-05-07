@@ -6,7 +6,11 @@ form{
   width: 25px;
 }
 .login-form{
-margin: 0 10%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 850px;
+  padding: 0 0 0 15%;
 }
 .visible{
   width: 30px;
@@ -15,15 +19,58 @@ margin: 0 10%;
 }
 .button{
   position: absolute;
-  margin-left: 35%;
+  margin-left: 25%;
   width: 24px;
   height: 24px;
-  background: none; /* Remove o fundo padrão */
-  border: none; /* Remove a borda padrão */
-  cursor: pointer; /* Adiciona o cursor de ponteiro */
+  background: none;
+  border: none;
+  cursor: pointer;
   padding: 0;
 }
 .automaticamente{
+  max-width:850px;
   margin: 20px 0 20px 0;
 }
+.input-wrapper{
+  max-width: 850px;
+}
+.form-switch{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  align-items: baseline;
+  justify-content: space-around;
+  padding: 0 20px 0 0;
+}
 
+.form-check-input:checked {
+  background-color: rgb(2, 173, 173);
+  border-color: rgb(2, 173, 173);
+}
+.form-check-input {
+  background-color: #ccc;
+  border-color: #ccc;
+}
+.form-check-input:active {
+  background-color: rgb(2, 173, 173);
+  border-color: rgb(2, 173, 173);
+}
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(2, 173, 173, 0.25);
+}
+
+@media (max-width: 1700px) {
+  .button{
+
+    margin-left: 29%;
+
+  }
+}
+@media (max-width: 1200px) {
+  .button{
+
+    margin-left: 25%;
+
+  }
+}
