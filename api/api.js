@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname)));
 
 app.post("/login", async (req, res) => {
     try {
-        
+
         const { name, password } = req.body
 
 
