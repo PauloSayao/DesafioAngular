@@ -4,15 +4,15 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   selector: 'app-default-login-layout',
   imports: [],
   templateUrl: './default-login-layout.component.html',
-  styleUrl: './default-login-layout.component.scss'
+  styleUrl: './default-login-layout.component.scss',
 })
 export class DefaultLoginLayoutComponent {
   @Input() title: string = '';
   @Input() primaryBtnText: string = '';
   @Input() disablePrimaryBtn: boolean = true;
-  @Output("submit") onSubmit = new EventEmitter();
+  @Output('submit') onSubmit = new EventEmitter();
 
-  submit(){
+  submit() {
     this.onSubmit.emit();
   }
 }

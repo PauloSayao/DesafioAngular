@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-tabledashboard',
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './tabledashboard.component.html',
   styleUrl: './tabledashboard.component.scss',
 })
@@ -21,12 +21,14 @@ export class TabledashboardComponent {
   long: number = 0;
 
   constructor(private http: HttpClient) {
-    this.vinSubject.pipe(
-      debounceTime(300),
-      filter((timer:string)=>timer.trim().length >19)
-    ).subscribe((vin) => {
-      this.buscarInformacoes(vin);
-    });
+    this.vinSubject
+      .pipe(
+        debounceTime(300),
+        filter((timer: string) => timer.trim().length > 19)
+      )
+      .subscribe((vin) => {
+        this.buscarInformacoes(vin);
+      });
   }
 
   preencher(event: Event): void {

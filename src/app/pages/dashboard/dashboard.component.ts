@@ -1,6 +1,6 @@
 import { Component, inject, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import{ ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TabledashboardComponent } from '../../components/tabledashboard/tabledashboard.component';
@@ -11,24 +11,22 @@ import { Carro } from '../../interfaces/Carro.interface';
   selector: 'app-dashboard',
   imports: [CommonModule, FormsModule, TabledashboardComponent],
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
+  private service = inject(SelectService);
 
-  private service = inject(SelectService)
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient){}
-
-  carros:Carro[] | null= null;
-  selecionado= 0
-  carSelect:number=0
-  carroSelecionado(){
+  carros: Carro[] | null = null;
+  selecionado = 0;
+  carSelect: number = 0;
+  carroSelecionado() {
     this.service.getApi().subscribe({
-      next : (resposta:any) => {
-      this.carros = resposta.vehicles
-      this.selecionado=this.carSelect
-      }
-    })
+      next: (resposta: any) => {
+        this.carros = resposta.vehicles;
+        this.selecionado = this.carSelect;
+      },
+    });
   }
 }
-

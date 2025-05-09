@@ -1,16 +1,33 @@
 <div class="main-content"><router-outlet></router-outlet></div>
 <header>
   <div class="cabecalho">
-    <button [mat-menu-trigger-for]="mainmenu" class="list"><svg  xmlns="http://www.w3.org/2000/svg" color="rgb(2, 173, 173)" width="20" height="20" fill="currentColor" class="bi bi-justify" viewBox="0 0 10 10">
-      <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
-    </svg></button>
-    <button [mat-menu-trigger-for]="sidemenu" class="list" ><img class="perfil" src="perfil.png" alt=""></button>
+    <button [mat-menu-trigger-for]="mainmenu" class="list">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        color="rgb(2, 173, 173)"
+        width="20"
+        height="20"
+        fill="currentColor"
+        class="bi bi-justify"
+        viewBox="0 0 10 10"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"
+        />
+      </svg>
+    </button>
+    <button [mat-menu-trigger-for]="sidemenu" class="list">
+      <img class="perfil" src="perfil.png" alt="" />
+    </button>
   </div>
 </header>
 <mat-menu #mainmenu>
-  <button class="btn-list" mat-menu-item (click)="onHome()" >Home</button>
-  <button class="btn-list" mat-menu-item (click)="onDashboard()" >Dashboard</button>
-  </mat-menu>
-  <mat-menu #sidemenu>
-    <button class="btn-list" mat-menu-item (click)="onLogout()">Logout</button>
-  </mat-menu>
+  <button class="btn-list" mat-menu-item (click)="onHome()">Home</button>
+  <button class="btn-list" mat-menu-item (click)="onDashboard()">
+    Dashboard
+  </button>
+</mat-menu>
+<mat-menu #sidemenu>
+  <button class="btn-list" mat-menu-item (click)="onLogout()">Logout</button>
+</mat-menu>

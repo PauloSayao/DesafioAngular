@@ -13,46 +13,56 @@
           <p>Veículo</p>
         </div>
         <div class="numero">
-          <select name="cars" id="cars" [(ngModel)]="carSelect" (change)="carroSelecionado()">
+          <select
+            name="cars"
+            id="cars"
+            [(ngModel)]="carSelect"
+            (change)="carroSelecionado()"
+          >
             <option value="0" disabled selected>Selecione um carro...</option>
             <option value="0">Ranger</option>
             <option value="1">Mustang</option>
             <option value="2">Territory</option>
             <option value="3">Bronco Sport</option>
-          </select></div>
+          </select>
         </div>
-        <div  class="total">
-          <div class="titulo">
-            <p>Total de Vendas</p>
-          </div>
-          <div class="numero">
-            <h2 *ngIf="carros">{{carros[selecionado].volumetotal}}</h2>
-            <p>Unid.</p>
-          </div>
+      </div>
+      <div class="total">
+        <div class="titulo">
+          <p>Total de Vendas</p>
         </div>
-        <div class="conectados">
-          <div class="titulo">
-            <p>Conectados</p>
-          </div>
-          <div class="numero">
-            <h2 *ngIf="carros">{{ carros[selecionado].connected }}</h2>
-            <p>Unid.</p>
-          </div>
+        <div class="numero">
+          <h2 *ngIf="carros">{{ carros[selecionado].volumetotal }}</h2>
+          <p>Unid.</p>
         </div>
+      </div>
+      <div class="conectados">
+        <div class="titulo">
+          <p>Conectados</p>
+        </div>
+        <div class="numero">
+          <h2 *ngIf="carros">{{ carros[selecionado].connected }}</h2>
+          <p>Unid.</p>
+        </div>
+      </div>
 
-        <div class="update">
-          <div class="titulo">
-            <p>Update Software</p>
-          </div>
-          <div class="numero">
-            <h2 *ngIf="carros">{{ carros[selecionado].softwareUpdates }}</h2>
-            <p>Unid.</p>
-          </div>
+      <div class="update">
+        <div class="titulo">
+          <p>Update Software</p>
+        </div>
+        <div class="numero">
+          <h2 *ngIf="carros">{{ carros[selecionado].softwareUpdates }}</h2>
+          <p>Unid.</p>
         </div>
       </div>
-      <div class="imagem">
-        <img *ngIf="carros" [src]="carros[selecionado].img" alt="Imagem do veículo" />
-      </div>
+    </div>
+    <div class="imagem">
+      <img
+        *ngIf="carros"
+        [src]="carros[selecionado].img"
+        alt="Imagem do veículo"
+      />
+    </div>
     <app-tabledashboard></app-tabledashboard>
   </body>
-  </html>
+</html>

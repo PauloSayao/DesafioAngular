@@ -12,15 +12,19 @@
     </thead>
     <tbody>
       <tr>
-        <td><input type="text" (input)="preencher($event)" placeholder="Insira o Código VIN"></td>
-        <td>{{odometro}}</td>
-        <td>{{nivelCombustivel}}</td>
-        <td>{{status}}</td>
-        <td>{{lat}}</td>
-        <td>{{long}}</td>
+        <td>
+          <input
+            type="text"
+            (input)="preencher($event)"
+            placeholder="Insira o Código VIN"
+          />
+        </td>
+        <td>{{ odometro }}</td>
+        <td>{{ nivelCombustivel }}</td>
+        <td>{{ status }}</td>
+        <td>{{ lat }}</td>
+        <td>{{ long }}</td>
       </tr>
     </tbody>
   </table>
 </div>
-
-
