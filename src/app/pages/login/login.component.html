@@ -2,7 +2,6 @@
   title="Boas-vindas"
   primaryBtnText="Entrar"
   secondaryBtnText=""
-  (submit)="submit()"
   [disablePrimaryBtn]="!loginForm.valid"
 >
   <link
@@ -47,6 +46,7 @@
           alt="Toggle Password Visibility"
         /></button
     ></app-primary-input>
+
     <div class="automaticamente">
       <div class="form-check form-switch">
         <label class="form-check-label" for="flexSwitchCheckDefault"
@@ -60,6 +60,13 @@
           (change)="onSwitchToggle($event)"
         />
       </div>
+      <div class="btn"><button
+        class="button2"
+        type="submit"
+
+        (click)="submit()"
+      >Entrar
+      </button></div>
     </div>
   </form>
 </app-default-login-layout>

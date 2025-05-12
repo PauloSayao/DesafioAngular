@@ -9,15 +9,6 @@
     <div class="login">
       <h1>{{ title }}</h1>
       <ng-content></ng-content>
-      <button
-        [class.botaoativado]="!disablePrimaryBtn"
-        type="submit"
-        class="botao"
-        (click)="submit()"
-        [disabled]="disablePrimaryBtn"
-      >
-        {{ primaryBtnText }}
-      </button>
     </div>
     <div class="fantasma"></div>
   </section>
