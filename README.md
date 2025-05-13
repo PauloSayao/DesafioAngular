@@ -12,6 +12,10 @@ ng serve
 ```bash
 npm run api
 ```
+```bash
+ng add @angular/material
+custom, yes, yes
+```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
